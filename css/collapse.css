@@ -1,0 +1,72 @@
+body {
+    background: #eee;
+    font-family: sans-serif;
+}
+
+#app {
+    width: 380px;
+    height: 550px;
+    box-shadow: 0 0 5px #333;
+}
+
+.t-collapse {
+    transition: 180ms;
+    background: #ddd;
+    box-shadow: 1px 1px 1px #333;
+    padding: 4px;
+}
+
+.t-collapse__label {
+    max-width: 90%;
+    height: 14px;
+    display: inline-block;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.t-collapse__label-toggle {
+    
+    float: right;
+    display: block;
+    margin: 0 10px;   
+    
+    text-align: right;
+}
+
+.t-collapse__label-toggle-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+    vertical-align: bottom;
+}
+
+/* modifiers */
+
+.t-collapse.is-active .t-collapse__label {
+    transition: 300ms;
+    overflow: visible;
+}
+
+.t-collapse.is-active .t-collapse__label-toggle-icon {
+    /*transform: rotate(180deg);*/
+    animation: rotate 180ms linear;
+    transform: rotate(180deg);
+}
+
+.t-collapse .t-collapse__label-toggle-icon {
+    /*transform: rotate(180deg);*/
+    transform: rotate(360deg);
+    transition: 180ms;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(180deg);
+    }
+}

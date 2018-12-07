@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
+
+    <link type="text/css" rel="stylesheet" href="css/collapse.css" />
+
+    <title>tags</title>
+</head>
+
+<body>
+
+    <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+            <symbol id="icon-chevron-down" viewBox="0 0 32 32">
+                <title>chevron-down</title>
+                <path class="path1" d="M14.35 24.22l-13.13-13.13c-0.424-0.424-0.686-1.009-0.686-1.655 0-1.293 1.048-2.341 2.341-2.341 0.646 0 1.231 0.262 1.655 0.686l11.47 11.48 11.47-11.48c0.424-0.424 1.009-0.686 1.655-0.686 1.293 0 2.341 1.048 2.341 2.341 0 0.646-0.262 1.231-0.686 1.655l-13.13 13.13c-0.423 0.421-1.006 0.681-1.65 0.681s-1.227-0.26-1.65-0.681z"></path>
+            </symbol>
+        </defs>
+    </svg>
+
+    <div id="app">
+
+        <div class="t-collapse">
+
+            <div class="t-collapse__label">
+
+                <div class="t-collapse__label-text">
+                    <b style="float: left"> Titulo - XYZ </b>
+                    <div> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+                </div>
+                
+            </div>
+
+            <div class="t-collapse__label-toggle">
+
+                    <svg class="t-collapse__label-toggle-icon">
+                        <use xlink:href="#icon-chevron-down"></use>
+                    </svg>
+
+                </div>
+
+        </div>
+
+        <div class="t-collapse">
+
+                <div class="t-collapse__label">
+    
+                    <div class="t-collapse__label-text">
+                        <b style="float: left"> Titulo - XYZ </b>
+                        <div> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+                    </div>
+                    
+                </div>
+    
+                <div class="t-collapse__label-toggle">
+    
+                        <svg class="t-collapse__label-toggle-icon">
+                            <use xlink:href="#icon-chevron-down"></use>
+                        </svg>
+    
+                    </div>
+    
+            </div>
+
+    </div>
+
+    <script>
+
+        document.querySelectorAll('.t-collapse__label-toggle').forEach(function (el) {
+            el.addEventListener('click', function toggleCollapse(evt) {
+                var target = parentUntilClass(evt.target, 't-collapse');
+                target.classList.toggle('is-active');
+            });
+        });
+
+        function parentUntilClass(obj, valor) {
+
+            try {
+
+                while (!false) {
+                    if (obj == undefined || obj == "undefined" || (typeof obj.getAttribute === 'undefined'))
+                        return null;
+
+                    if (obj.classList.contains(valor)) {
+                        return obj;
+                    }
+
+                    obj = obj.parentNode;
+                }
+            } catch (Exception) {
+                return null;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
