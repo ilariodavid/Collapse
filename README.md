@@ -1,0 +1,1 @@
+# Collapse CSS - Simple
